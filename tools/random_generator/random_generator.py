@@ -623,7 +623,12 @@ def gradio_interface():
             """刷新随机数规则下拉列表"""
             rules = load_random_rules()
             choices = [(r.get('name', '未命名'), r.get('id')) for r in rules]
-            return gr.update(choices=choices), gr.update(choices=choices), gr.update(choices=choices)
+            return (
+                gr.update(choices=choices),
+                gr.update(choices=choices),
+                gr.update(choices=choices),
+                gr.update(choices=choices)
+            )
         
         def refresh_generation_rules_list():
             """刷新生成规则下拉列表"""
